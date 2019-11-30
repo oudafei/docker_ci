@@ -10,7 +10,9 @@ echo Deploy Project start...
 
 #测试
 #ssh root@172.16.143.51 && docker image ls -a && echo Deploy Project end...
-ssh root@172.16.143.51 "cd ~/source/docker_ci; git status"
+#ssh root@172.16.143.51 "cd ~/source/docker_ci; git status"
+ssh root@172.16.143.51 "cd ~/source/docker_ci; git pull; docker-compose down; docker-compose up -d --force-recreate --build"
+
 
 echo Deploy Project end...
 
