@@ -13,7 +13,10 @@ class Mongodb {
     // 连接
     this.client = new MongoClient(conf.url, { useNewUrlParser: true });
     this.client.connect(err => {
-      if (err) throw err;
+      if (err) {
+        console.log(err);
+        throw err
+      };
       console.log("连接成功");
       this.emmiter.emit("connect");
     });
